@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BootingBrain</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_play_ground">Play Ground Activity</string>
+    <string name="title_activity_login_facebook">Login Facebook Activity</string>
+    <string name="app_id">1590482074507314</string>
+    <string name="back">\u003c\u003c</string>
+    <string name="title_activity_settings2">Settings</string>
+    <string name="title_activity_main_calculating">MainCalculatingActivity</string>
+    <string name="title_activity_matching_pictures_main">MatchingPicturesMainActivity</string>
+    <string name="title_activity_next_number_main">NextNumberMainActivity</string>
+    <string name="title_activity_tab_host">TabHostActivity</string>
+
+    <string name="title_activity_matching_picture">MatchingPictureActivity</string>
+    <string name="connect">Connect</string>
+    <string name="discover">Discover</string>
+    <string name="register">Register</string>
+    <string name="send">Send</string>
+
+</resources>

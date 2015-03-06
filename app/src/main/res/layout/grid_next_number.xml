@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" tools:context=".NextNumberFragment"
+    android:orientation="vertical"
+    android:id="@+id/next_number_activity">
+    <ProgressBar
+        android:id="@+id/timerBar"
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:indeterminate="false"
+        android:background="#ffff0836"
+        android:layout_gravity="fill_horizontal"/>
+    <!--style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+
+        <Chronometer
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/chronometer"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="true"
+            android:layout_toLeftOf="@+id/markView"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="00"
+            android:id="@+id/markView"
+            android:layout_gravity="right"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"/>
+
+    </RelativeLayout>
+
+    <GridView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/gridView"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:gravity="center"
+        />
+</LinearLayout>

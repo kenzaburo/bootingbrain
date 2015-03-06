@@ -1,0 +1,301 @@
+package com.academic.idiots.bootingbrain;
+
+import android.app.Activity;
+import android.content.Context;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import java.util.Random;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
+
+public class MatchingPictureActivity extends Activity implements OnClickListener {
+
+    Context mContext = this;
+    private Animation animation_to_middle;
+    private Animation animation_from_middle;
+    public com.wefika.flowlayout.FlowLayout flowLayout;
+    private boolean isBackOfCardShowing = true;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_matching_picture);
+        animation_to_middle = AnimationUtils.loadAnimation(this,
+                R.anim.to_middle);
+
+//		animation_to_middle.setAnimationListener(this);
+        animation_from_middle = AnimationUtils.loadAnimation(this,
+                R.anim.from_middle);
+
+//		animation_from_middle.setAnimationListener(this);
+        flowLayout = (com.wefika.flowlayout.FlowLayout) findViewById(R.id.flow_layout_id);
+        addViews();
+    }
+
+    public static int[] R_ID = {
+            R.drawable.abra_1
+            , R.drawable.carterpie_1
+            , R.drawable.raichu_1
+            , R.drawable.ala_1
+            , R.drawable.champ_1
+            , R.drawable.genga_1
+            , R.drawable.sqrtle_1
+            , R.drawable.arcanie_1
+            , R.drawable.char_1
+            , R.drawable.growl_1
+            , R.drawable.starmine_1
+            , R.drawable.charizar_1
+            , R.drawable.vena_1
+            , R.drawable.blast_1
+            , R.drawable.charm_1
+            , R.drawable.ivy_1
+            , R.drawable.vile_1
+            , R.drawable.bulba_1
+            , R.drawable.cubone_1
+            , R.drawable.king_1
+            , R.drawable.water_1
+            , R.drawable.butter_1
+            , R.drawable.dragon_1
+            , R.drawable.moth_1
+            , R.drawable.dragonite
+            , R.drawable.onix_1
+            , R.drawable.dratini_1
+            , R.drawable.pika_1
+            , R.drawable.abra_1
+            , R.drawable.carterpie_1
+            , R.drawable.raichu_1
+            , R.drawable.ala_1
+            , R.drawable.champ_1
+            , R.drawable.genga_1
+            , R.drawable.sqrtle_1
+            , R.drawable.arcanie_1
+            , R.drawable.char_1
+            , R.drawable.growl_1
+            , R.drawable.starmine_1
+            , R.drawable.charizar_1
+            , R.drawable.vena_1
+            , R.drawable.blast_1
+            , R.drawable.charm_1
+            , R.drawable.ivy_1
+            , R.drawable.vile_1
+            , R.drawable.bulba_1
+            , R.drawable.cubone_1
+            , R.drawable.king_1
+            , R.drawable.water_1
+            , R.drawable.butter_1
+            , R.drawable.dragon_1
+            , R.drawable.moth_1
+            , R.drawable.dragonite
+            , R.drawable.onix_1
+            , R.drawable.dratini_1
+            , R.drawable.pika_1
+    };
+
+    PictureHolder[] pictureHolders = new PictureHolder[R_ID.length];
+
+    public void addViews() {
+        LayoutInflater layoutInflater = LayoutInflater.from(this);
+        Random random = new Random();
+        for (int i = R_ID.length; i > 0; i--) {
+            int randInt = random.nextInt(i);
+            int temp = R_ID[i-1];
+            R_ID[i-1] = R_ID[randInt];
+            R_ID[randInt] = temp;
+
+            PictureMdl pictureMdl = new PictureMdl(R_ID[i-1]);
+            ImageView v = (ImageView) layoutInflater.inflate(R.layout.picture, flowLayout, false);
+            pictureHolders[i-1] = new PictureHolder(pictureMdl, v);
+            pictureHolders[i-1].setOnImageClickListener(new ImageListener(pictureHolders[i-1]));
+            flowLayout.addView(v);
+        }
+    }
+
+
+    int active = 0;
+    PictureHolder firstActive;
+    PictureHolder secondActive;
+
+    @Override
+    public void onClick(View view) {
+
+    }
+
+    class ImageListener implements OnClickListener {
+        PictureHolder mPictureHolder;
+
+        public ImageListener(PictureHolder pictureHolder) {
+            mPictureHolder = pictureHolder;
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (!mPictureHolder.isEnable()) {
+                return;
+            }
+
+            if (active == 2) {
+                return;
+            }
+
+            mPictureHolder.flip();
+            if (active == 1) {
+
+                if (firstActive != mPictureHolder) {
+                    secondActive = mPictureHolder;
+                    active = 2;
+                    android.os.Handler handler = new android.os.Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (firstActive.model.mR_ID == secondActive.model.mR_ID ){
+                                firstActive.setEnable(false);
+                                secondActive.setEnable(false);
+                                firstActive.imageView.setImageResource(R.drawable.transparent);
+                                secondActive.imageView.setImageResource(R.drawable.transparent);
+                            } else  {
+                                firstActive.flip();
+                                secondActive.flip();
+                            }
+                            active = 0;
+                        }
+                    }, 700);
+                    return;
+                } else {
+                    active = 0;
+                    return;
+                }
+            }
+            if (active == 0) {
+                firstActive = mPictureHolder;
+                active = 1;
+                return;
+            }
+        }
+    }
+
+    class PictureMdl {
+        public int mR_ID;
+        boolean isFont = false;
+
+        public PictureMdl(int R_ID) {
+            this.mR_ID = R_ID;
+        }
+    }
+
+    class PictureHolder {
+        public PictureMdl model;
+        public ImageView imageView;
+        private boolean enable = true;
+        Animation anim_to_middle, anim_from_middle;
+
+        public PictureHolder(PictureMdl model, ImageView imageView) {
+            this.model = model;
+            this.imageView = imageView;
+            init();
+        }
+
+        /**
+         * set OnClickListener for Image
+         *
+         * @param onClickListener
+         */
+        public void setOnImageClickListener(OnClickListener onClickListener) {
+            imageView.setOnClickListener(onClickListener);
+        }
+
+        private void init() {
+            this.imageView.setImageResource(R.drawable.back_of_card);
+            anim_to_middle = AnimationUtils.loadAnimation(mContext,
+                    R.anim.to_middle);
+            anim_from_middle = AnimationUtils.loadAnimation(mContext,
+                    R.anim.from_middle);
+
+            anim_to_middle.setAnimationListener(new AnimationListener() {
+
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    Log.i("onAnimation", "Start " + animation.getClass().getName());
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    Log.i("onAnimation", "End " + animation.getClass().getName());
+                    imageView.clearAnimation();
+                    if (model.isFont) {
+                        imageView.setImageResource(R.drawable.back_of_card);
+                        model.isFont = false;
+                    } else {
+                        imageView.setImageResource(model.mR_ID);
+                        model.isFont = true;
+                    }
+                    imageView.clearAnimation();
+                    imageView.startAnimation(anim_from_middle);
+                }
+            });
+
+            anim_from_middle.setAnimationListener(new AnimationListener() {
+
+                @Override
+                public void onAnimationStart(Animation animation) {
+                    // TODO Auto-generated method stub
+                    Log.i("onAnimation", "Start " + animation.getClass().getName());
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+                    // TODO Auto-generated method stub
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    Log.i("onAnimation", "End " + animation.getClass().getName());
+                    if (flipListener != null) {
+                        flipListener.onEndFlip(model, imageView);
+                    }
+                    setEnable(true);
+                }
+            });
+        }
+
+        private FlipListener flipListener = null;
+
+        public void setFlipListener(FlipListener flipListener) {
+            this.flipListener = flipListener;
+        }
+
+        public void flip() {
+            setEnable(false);
+            if (flipListener != null) {
+                flipListener.onStartFlip(model, imageView);
+            }
+            imageView.clearAnimation();
+            imageView.startAnimation(anim_to_middle);
+        }
+
+        public boolean isEnable() {
+            return enable;
+        }
+
+        public void setEnable(boolean isEnable) {
+            this.enable = isEnable;
+        }
+    }
+
+    interface FlipListener {
+        public void onStartFlip(PictureMdl pictureMdl, ImageView imageView);
+
+        public void onEndFlip(PictureMdl pictureMdl, ImageView imageView);
+    }
+}

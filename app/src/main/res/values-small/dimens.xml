@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginBasex40">120dp</dimen>
+    <dimen name="marginBasex35">105dp</dimen>
+    <dimen name="marginBasex30">90dp</dimen>
+    <dimen name="marginBasex27">81dp</dimen>
+    <dimen name="marginBasex25">75dp</dimen>
+    <dimen name="marginBasex20">60dp</dimen>
+    <dimen name="marginBasex15">45dp</dimen>
+    <dimen name="marginBasex12">36dp</dimen>
+    <dimen name="marginBasex10">30dp</dimen>
+    <dimen name="marginBasex9">27dp</dimen>
+    <dimen name="marginBasex8">24dp</dimen>
+    <dimen name="marginBasex7">21dp</dimen>
+    <dimen name="marginBasex6">18dp</dimen>
+    <dimen name="marginBasex5">15dp</dimen>
+    <dimen name="marginBasex4">12dp</dimen>
+    <dimen name="marginBasex3.5">10.5dp</dimen>
+    <dimen name="marginBasex3">9dp</dimen>
+    <dimen name="marginBasex2">6dp</dimen>
+    <dimen name="marginBase">3dp</dimen>
+    <dimen name="marginBasex.5">1.5dp</dimen>
+    <dimen name="textHeaderx1.5">30.6sp</dimen>
+    <dimen name="textHeader">23sp</dimen>
+    <dimen name="textExtraLarge">20sp</dimen>
+    <dimen name="textLarge">18sp</dimen>
+    <dimen name="textMediumLarge">15sp</dimen>
+    <dimen name="textMedium">12sp</dimen>
+    <dimen name="textSmall">10sp</dimen>
+    <dimen name="textExtraSmall">8sp</dimen>
+</resources>

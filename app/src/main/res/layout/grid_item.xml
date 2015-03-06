@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/number"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginLeft="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_weight="0"
+    android:autoText="false"
+    android:background="#ffe9ffc1"
+    android:gravity="center_horizontal"
+    android:minHeight="50dp"
+    android:textStyle="bold" /><!--style="@style/Base.TextAppearance.AppCompat.Button"-->
+

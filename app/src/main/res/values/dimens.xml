@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+<!--     default -->
+    <dimen name="marginBasex40">200dp</dimen>
+    <dimen name="marginBasex35">175dp</dimen>
+    <dimen name="marginBasex30">150dp</dimen>
+    <dimen name="marginBasex27">135dp</dimen>
+    <dimen name="marginBasex25">125dp</dimen>
+    <dimen name="marginBasex20">100dp</dimen>
+    <dimen name="marginBasex15">75dp</dimen>
+    <dimen name="marginBasex12">60dp</dimen>
+    <dimen name="marginBasex10">50dp</dimen>
+    <dimen name="marginBasex9">45dp</dimen>
+    <dimen name="marginBasex8">40dp</dimen>
+    <dimen name="marginBasex7">35dp</dimen>
+    <dimen name="marginBasex6">30dp</dimen>
+    <dimen name="marginBasex5">25dp</dimen>
+    <dimen name="marginBasex4">20dp</dimen>
+    <dimen name="marginBasex3.5">17.5dp</dimen>
+    <dimen name="marginBasex3">15dp</dimen>
+    <dimen name="marginBasex2">10dp</dimen>
+    <dimen name="marginBase">5dp</dimen>
+    <dimen name="marginBasex.5">2.5dp</dimen>
+    <dimen name="textHeaderx1.5">40sp</dimen>
+    <dimen name="textHeader">30sp</dimen>
+    <dimen name="textExtraLarge">25sp</dimen>
+    <dimen name="textLarge">22sp</dimen>
+    <dimen name="textMediumLarge">18sp</dimen>
+    <dimen name="textMedium">14sp</dimen>
+    <dimen name="textSmall">12sp</dimen>
+    <dimen name="textExtraSmall">10sp</dimen>
+    <dimen name="shadow_width">8dp</dimen>
+    <dimen name="layer_width">300dp</dimen>
+    <dimen name="offset_width">48dp</dimen>
+
+    <!-- need del -->
+    <!-- Default -->
+    <dimen name="radius_default">3dp</dimen>
+    <dimen name="padding_default">8dp</dimen>
+    <dimen name="margin_default">5dp</dimen>
+    <dimen name="line_default">1dp</dimen>
+
+    <!-- Products -->
+    <dimen name="height_list">90dp</dimen>
+    <dimen name="size_list_image">64dp</dimen>
+    <dimen name="font_size_title">17sp</dimen>
+    <dimen name="font_size_description">15sp</dimen>
+    <dimen name="margin_setting">20dp</dimen>
+    <dimen name="font_size_new_tag">11sp</dimen>
+    <dimen name="padding_new_tag">3dp</dimen>
+    <!-- end need del -->
+
+</resources>
