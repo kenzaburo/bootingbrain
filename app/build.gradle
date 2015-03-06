@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 19
+    buildToolsVersion '19.1.0'
 
     defaultConfig {
         applicationId "idiots.academic.com"
@@ -21,5 +21,11 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:21.0.3'
+    //    compile project(':facebookSDK')
+    //    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile project(':facebookSDK')
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile files('libs/matheclipse-parser-0.0.10.jar')
+    compile 'com.wefika:flowlayout:0.4.0'
 }

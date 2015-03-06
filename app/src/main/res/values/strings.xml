@@ -11,7 +11,7 @@
     <string name="title_activity_settings2">Settings</string>
     <string name="title_activity_main_calculating">MainCalculatingActivity</string>
     <string name="title_activity_matching_pictures_main">MatchingPicturesMainActivity</string>
-    <string name="title_activity_next_number_main">NextNumberMainActivity</string>
+    <string name="title_activity_next_number_act">NextNumberActivity</string>
     <string name="title_activity_tab_host">TabHostActivity</string>
 
     <string name="title_activity_matching_picture">MatchingPictureActivity</string>

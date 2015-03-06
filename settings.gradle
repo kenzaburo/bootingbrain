@@ -1,1 +1,2 @@
+include ':facebookSDK'
 include ':app'

@@ -61,8 +61,8 @@
             android:label="@string/title_activity_matching_pictures_main" >
         </activity>
         <activity
-            android:name=".nextnumber.NextNumberMainActivity"
-            android:label="@string/title_activity_next_number_main" >
+            android:name=".nextnumber.NextNumberActivity"
+            android:label="@string/title_activity_next_number_act" >
         </activity>
         <activity
             android:name=".TabHostActivity"
@@ -73,7 +73,7 @@
             android:name=".MatchingPictureActivity"
             android:label="@string/title_activity_matching_picture"
             android:screenOrientation="portrait" >
-            
+
         </activity>
 
         <activity android:name="com.academic.idiots.nsd.NsdChatActivity"

@@ -319,6 +319,8 @@ public class HomeActivity extends ActionBarActivity {
 		@Override
 		protected String doInBackground(String... params) {
 			// Create a new HttpClient and Post Header
+            HttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppost = new HttpPost("http://104.236.123.60:8888/users/login");
             try {
                 // Add your data
                 List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(
