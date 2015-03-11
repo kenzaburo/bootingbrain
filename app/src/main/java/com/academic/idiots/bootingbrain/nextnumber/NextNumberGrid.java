@@ -15,7 +15,6 @@ import android.widget.Chronometer;
 import android.widget.GridView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.academic.idiots.bootingbrain.HomeActivity;
 import com.academic.idiots.bootingbrain.R;
 

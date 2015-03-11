@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-
 import com.academic.idiots.bootingbrain.LogDebug;
 import com.academic.idiots.bootingbrain.R;
 import java.util.ArrayList;
@@ -16,7 +15,6 @@ import java.util.Random;
 
 public class NumberAdapter extends BaseAdapter {
     private LogDebug logger = new LogDebug(this.getClass().getName());
-
     private ArrayList<Integer> arrayList = new ArrayList<Integer>();
     private Context context;
     private int nextNumber = 0;
