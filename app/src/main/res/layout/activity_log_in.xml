@@ -33,7 +33,7 @@
         android:textColor="#fff"
         android:paddingLeft="@dimen/marginBasex5"
         android:textSize="@dimen/textMediumLarge"
-        android:text="Facebook Login" />
+        android:text="@string/login_facebook" />
 
     <View
         android:layout_width="10dp"

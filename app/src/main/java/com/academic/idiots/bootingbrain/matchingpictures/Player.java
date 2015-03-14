@@ -13,8 +13,6 @@ public class Player {
 
     String name;
 
-
-
     public String getName() {
         return name;
     }
@@ -34,6 +32,4 @@ public class Player {
     public void addScore(int additionScores){
         score+= additionScores;
     }
-
-
 }

@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg_main"
     android:clickable="false"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -9,41 +10,31 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.academic.idiots.bootingbrain.HomeActivity">
 
-    <Button
-        android:id="@+id/btn_facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Facebook Login" />
-
-    <Button
-        android:id="@+id/btn_go"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Go" />
-
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:gravity="center_horizontal"
         android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Go" />
 
         <Button
             android:id="@+id/btn_game_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quick Calculating" />
-
-        <Button
-            android:id="@+id/btn_game_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Matching Pictures" />
 
         <Button
             android:id="@+id/btn_game_3"
@@ -57,14 +48,56 @@
             android:layout_height="wrap_content"
             android:text="Settings" />
 
+        <Button
+            android:id="@+id/btn_nsd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:text="Nsd" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_nsd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true"
-        android:text="Nsd" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+        <LinearLayout
+
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/marginBase"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="?android:attr/actionBarSize"
+                android:text="New Button" />
+
+            <Button
+                android:id="@+id/button10"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button" />
+
+            <Button
+                android:id="@+id/button11"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Button" />
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/gr_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_light"
+            android:numColumns="2" />
+
+    </LinearLayout>
 </RelativeLayout>

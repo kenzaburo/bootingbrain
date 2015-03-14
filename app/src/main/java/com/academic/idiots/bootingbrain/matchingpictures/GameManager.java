@@ -13,6 +13,7 @@ public class GameManager {
     List<Player> players = new ArrayList<Player>(2);
     int level = 0;
 
+
     public void addPlayer(Player newPlayer) {
         players.add(newPlayer);
     }
@@ -27,6 +28,7 @@ public class GameManager {
         }
         return players.get(position);
     }
+
 
     public Player getCurrentPlayer() {
         return players.get(currentPlayerPosition);

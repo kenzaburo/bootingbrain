@@ -36,13 +36,14 @@
             android:text="0.0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white" />
+
+
     </LinearLayout>
 
     <com.wefika.flowlayout.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/flow_layout_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal|top">
-        </com.wefika.flowlayout.FlowLayout>
+        android:gravity="center_horizontal|top"></com.wefika.flowlayout.FlowLayout>
 
 </LinearLayout>
