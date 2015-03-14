@@ -11,6 +11,11 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.academic.idiots.bootingbrain.matchingpictures.GameManager;
+import com.academic.idiots.bootingbrain.matchingpictures.Player;
+
 import java.util.Random;
 import java.util.logging.Handler;
 import java.util.logging.LogRecord;
@@ -23,7 +28,10 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
     public com.wefika.flowlayout.FlowLayout flowLayout;
     private boolean isBackOfCardShowing = true;
 
-
+    boolean onePersonMod = true;
+    TextView tvScore;
+    TextView tvName;
+    GameManager gameManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +46,18 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
 //		animation_from_middle.setAnimationListener(this);
         flowLayout = (com.wefika.flowlayout.FlowLayout) findViewById(R.id.flow_layout_id);
         addViews();
+        gameManager = new GameManager();
+
+        if (onePersonMod){
+            gameManager.addPlayer(new Player(0, "Thien"));
+        }
+
+        tvScore = (TextView) findViewById(R.id.tv_sore);
+        tvScore.setText(gameManager.getPlayer(0).getScore()+"");
+        tvName = (TextView) findViewById(R.id.tv_name);
+        tvName.setText(gameManager.getPlayer(0).getName());
     }
+
 
     public static int[] R_ID = {
             R.drawable.abra_1
@@ -160,6 +179,8 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
                                 secondActive.setEnable(false);
                                 firstActive.imageView.setImageResource(R.drawable.transparent);
                                 secondActive.imageView.setImageResource(R.drawable.transparent);
+                                gameManager.getCurrentPlayer().addScore(1);
+                                tvScore.setText(gameManager.getCurrentPlayer().getScore()+"");
                             } else  {
                                 firstActive.flip();
                                 secondActive.flip();
