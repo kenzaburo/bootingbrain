@@ -3,34 +3,45 @@
     android:layout_height="fill_parent"
     android:background="#006600"
     android:gravity="center"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Medium Text"
-            android:textColor="@android:color/white"
-            android:layout_margin="@dimen/marginBase"
-            android:id="@+id/tv_sore" /><TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:textColor="@android:color/white"
-        android:layout_margin="@dimen/marginBase"
-        android:id="@+id/tv_name" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_sore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginBase"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginBase"
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/marginBase"
+            android:text="0.0"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
-    <com.wefika.flowlayout.FlowLayout
-         xmlns:android="http://schemas.android.com/apk/res/android"
-         android:id="@+id/flow_layout_id"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:gravity="center_horizontal|top" ></com.wefika.flowlayout.FlowLayout>
+    <com.wefika.flowlayout.FlowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/flow_layout_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal|top">
+        </com.wefika.flowlayout.FlowLayout>
 </LinearLayout>
