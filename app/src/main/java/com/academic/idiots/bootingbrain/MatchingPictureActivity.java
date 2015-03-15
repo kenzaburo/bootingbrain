@@ -21,17 +21,16 @@ import java.util.Random;
 
 public class MatchingPictureActivity extends Activity implements OnClickListener, GameManager.EndGameListenner {
 
-    private Context mContext = this;
+    Context mContext = this;
     private Animation animation_to_middle;
     private Animation animation_from_middle;
     public com.wefika.flowlayout.FlowLayout flowLayout;
     private boolean isBackOfCardShowing = true;
 
-    private boolean onePersonMod = true;
-    private TextView tvScore;
-    private TextView tvName;
-    private GameManager gameManager;
-
+    boolean onePersonMod = true;
+    TextView tvScore;
+    TextView tvName;
+    GameManager gameManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,20 +47,20 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
 
         gameManager = new GameManager();
         gameManager.setEndGameListenner(this);
-        if (onePersonMod) {
+        if (onePersonMod){
             gameManager.addPlayer(new Player(0, "Thien"));
         }
         newGame();
         tvScore = (TextView) findViewById(R.id.tv_sore);
-        tvScore.setText(gameManager.getCurrentPlayer().getScore() + "");
+        tvScore.setText(gameManager.getCurrentPlayer().getScore()+"");
         tvName = (TextView) findViewById(R.id.tv_name);
         tvName.setText(gameManager.getCurrentPlayer().getName());
     }
 
-    public void newGame() {
+    public void newGame(){
         LevelInfo levelInfo = gameManager.getLevelInfo();
         removeAllViews();
-        addViews(levelInfo.getHeightSize() * levelInfo.getWidthSize());
+        addViews(levelInfo.getHeightSize()*levelInfo.getWidthSize());
     }
 
 
@@ -96,25 +95,25 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
             , R.drawable.pika_1
     };
 
-    PictureHolder[] pictureHolders;
+    PictureHolder[] pictureHolders ;
 
-    public void removeAllViews() {
+    public void removeAllViews(){
         flowLayout.removeAllViews();
     }
 
     public void addViews(int size) {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        int length = Math.min(size, R_ID.length * 2);
+        int length = Math.min(size, R_ID.length*2);
         pictureHolders = new PictureHolder[length];
         Random random = new Random();
         int rIDs[] = new int[length];
-        int haft = length / 2;
+        int haft = length/2;
         for (int i = 0; i < haft; i++) {
             rIDs[i] = R_ID[i];
-            rIDs[i + haft] = R_ID[i];
+            rIDs[i+haft] = R_ID[i];
         }
-        for (int i = (length - 1); i >= 0; i--) {
-            int randInt = random.nextInt(i + 1);
+        for (int i = (length-1); i >=0; i--) {
+            int randInt = random.nextInt(i+1);
             // swap code
             int temp = rIDs[i];
             rIDs[i] = rIDs[randInt];
@@ -171,14 +170,14 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if (firstActive.model.mR_ID == secondActive.model.mR_ID) {
+                            if (firstActive.model.mR_ID == secondActive.model.mR_ID ){
                                 firstActive.setEnable(false);
                                 secondActive.setEnable(false);
                                 firstActive.imageView.setImageResource(R.drawable.transparent);
                                 secondActive.imageView.setImageResource(R.drawable.transparent);
                                 gameManager.increaseMatching();
-                                tvScore.setText(gameManager.getCurrentPlayer().getScore() + "");
-                            } else {
+                                tvScore.setText(gameManager.getCurrentPlayer().getScore()+"");
+                            } else  {
                                 firstActive.flip();
                                 secondActive.flip();
                             }
@@ -202,7 +201,6 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
     class PictureMdl {
         public int mR_ID;
         boolean isFont = false;
-
         public PictureMdl(int R_ID) {
             this.mR_ID = R_ID;
         }
