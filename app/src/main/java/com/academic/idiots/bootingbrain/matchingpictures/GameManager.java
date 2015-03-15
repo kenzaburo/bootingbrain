@@ -11,6 +11,7 @@ import java.util.List;
 public class GameManager {
     private int currentPlayerPosition = 0;
     List<Player> players = new ArrayList<Player>(2);
+    int level = 0;
 
     public void addPlayer(Player newPlayer) {
         players.add(newPlayer);
@@ -27,7 +28,7 @@ public class GameManager {
         return players.get(position);
     }
 
-    public Player getCurrentPlayer(){
+    public Player getCurrentPlayer() {
         return players.get(currentPlayerPosition);
     }
 
@@ -37,8 +38,55 @@ public class GameManager {
             return;
         }
         currentPlayerPosition++;
-        if (currentPlayerPosition == players.size()){
-            currentPlayerPosition=0;
+        if (currentPlayerPosition == players.size()) {
+            currentPlayerPosition = 0;
         }
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public void levelUp() {
+        this.level++;
+    }
+
+    public LevelInfo getLevelInfo() {
+        switch (level) {
+            case 0:
+            case 1:
+            case 2:
+                return LevelInfo.LEVEL_INFOS[level];
+            default:
+                return new LevelInfo(6, 6);
+        }
+    }
+
+    private EndGameListenner endGameListenner = null;
+
+    public void setEndGameListenner(EndGameListenner endGameListenner) {
+        this.endGameListenner = endGameListenner;
+    }
+
+    public void checkEndGame() {
+        if (getLevelInfo().isFinished()) {
+            if (endGameListenner != null) {
+                endGameListenner.onEndGame();
+            }
+        }
+    }
+
+    public interface EndGameListenner {
+        public void onEndGame();
+    }
+
+    public void increaseMatching(){
+        getCurrentPlayer().addScore(1);
+        getLevelInfo().inscreaseMatChing();
+        checkEndGame();
     }
 }

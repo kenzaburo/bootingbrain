@@ -14,13 +14,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.academic.idiots.bootingbrain.matchingpictures.GameManager;
+import com.academic.idiots.bootingbrain.matchingpictures.LevelInfo;
 import com.academic.idiots.bootingbrain.matchingpictures.Player;
 
 import java.util.Random;
-import java.util.logging.Handler;
-import java.util.logging.LogRecord;
 
-public class MatchingPictureActivity extends Activity implements OnClickListener {
+public class MatchingPictureActivity extends Activity implements OnClickListener, GameManager.EndGameListenner {
 
     Context mContext = this;
     private Animation animation_to_middle;
@@ -45,50 +44,28 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
 
 //		animation_from_middle.setAnimationListener(this);
         flowLayout = (com.wefika.flowlayout.FlowLayout) findViewById(R.id.flow_layout_id);
-        addViews();
-        gameManager = new GameManager();
 
+        gameManager = new GameManager();
+        gameManager.setEndGameListenner(this);
         if (onePersonMod){
             gameManager.addPlayer(new Player(0, "Thien"));
         }
-
+        newGame();
         tvScore = (TextView) findViewById(R.id.tv_sore);
-        tvScore.setText(gameManager.getPlayer(0).getScore()+"");
+        tvScore.setText(gameManager.getCurrentPlayer().getScore()+"");
         tvName = (TextView) findViewById(R.id.tv_name);
-        tvName.setText(gameManager.getPlayer(0).getName());
+        tvName.setText(gameManager.getCurrentPlayer().getName());
+    }
+
+    public void newGame(){
+        LevelInfo levelInfo = gameManager.getLevelInfo();
+        removeAllViews();
+        addViews(levelInfo.getHeightSize()*levelInfo.getWidthSize());
     }
 
 
-    public static int[] R_ID = {
+    public static final int[] R_ID = {
             R.drawable.abra_1
-            , R.drawable.carterpie_1
-            , R.drawable.raichu_1
-            , R.drawable.ala_1
-            , R.drawable.champ_1
-            , R.drawable.genga_1
-            , R.drawable.sqrtle_1
-            , R.drawable.arcanie_1
-            , R.drawable.char_1
-            , R.drawable.growl_1
-            , R.drawable.starmine_1
-            , R.drawable.charizar_1
-            , R.drawable.vena_1
-            , R.drawable.blast_1
-            , R.drawable.charm_1
-            , R.drawable.ivy_1
-            , R.drawable.vile_1
-            , R.drawable.bulba_1
-            , R.drawable.cubone_1
-            , R.drawable.king_1
-            , R.drawable.water_1
-            , R.drawable.butter_1
-            , R.drawable.dragon_1
-            , R.drawable.moth_1
-            , R.drawable.dragonite
-            , R.drawable.onix_1
-            , R.drawable.dratini_1
-            , R.drawable.pika_1
-            , R.drawable.abra_1
             , R.drawable.carterpie_1
             , R.drawable.raichu_1
             , R.drawable.ala_1
@@ -118,21 +95,34 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
             , R.drawable.pika_1
     };
 
-    PictureHolder[] pictureHolders = new PictureHolder[R_ID.length];
+    PictureHolder[] pictureHolders ;
 
-    public void addViews() {
+    public void removeAllViews(){
+        flowLayout.removeAllViews();
+    }
+
+    public void addViews(int size) {
         LayoutInflater layoutInflater = LayoutInflater.from(this);
+        int length = Math.min(size, R_ID.length*2);
+        pictureHolders = new PictureHolder[length];
         Random random = new Random();
-        for (int i = R_ID.length; i > 0; i--) {
-            int randInt = random.nextInt(i);
-            int temp = R_ID[i-1];
-            R_ID[i-1] = R_ID[randInt];
-            R_ID[randInt] = temp;
+        int rIDs[] = new int[length];
+        int haft = length/2;
+        for (int i = 0; i < haft; i++) {
+            rIDs[i] = R_ID[i];
+            rIDs[i+haft] = R_ID[i];
+        }
+        for (int i = (length-1); i >=0; i--) {
+            int randInt = random.nextInt(i+1);
+            // swap code
+            int temp = rIDs[i];
+            rIDs[i] = rIDs[randInt];
+            rIDs[randInt] = temp;
 
-            PictureMdl pictureMdl = new PictureMdl(R_ID[i-1]);
+            PictureMdl pictureMdl = new PictureMdl(rIDs[i]);
             ImageView v = (ImageView) layoutInflater.inflate(R.layout.picture, flowLayout, false);
-            pictureHolders[i-1] = new PictureHolder(pictureMdl, v);
-            pictureHolders[i-1].setOnImageClickListener(new ImageListener(pictureHolders[i-1]));
+            pictureHolders[i] = new PictureHolder(pictureMdl, v);
+            pictureHolders[i].setOnImageClickListener(new ImageListener(pictureHolders[i]));
             flowLayout.addView(v);
         }
     }
@@ -145,6 +135,12 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
     @Override
     public void onClick(View view) {
 
+    }
+
+    @Override
+    public void onEndGame() {
+        gameManager.levelUp();
+        newGame();
     }
 
     class ImageListener implements OnClickListener {
@@ -179,7 +175,7 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
                                 secondActive.setEnable(false);
                                 firstActive.imageView.setImageResource(R.drawable.transparent);
                                 secondActive.imageView.setImageResource(R.drawable.transparent);
-                                gameManager.getCurrentPlayer().addScore(1);
+                                gameManager.increaseMatching();
                                 tvScore.setText(gameManager.getCurrentPlayer().getScore()+"");
                             } else  {
                                 firstActive.flip();
@@ -205,7 +201,6 @@ public class MatchingPictureActivity extends Activity implements OnClickListener
     class PictureMdl {
         public int mR_ID;
         boolean isFont = false;
-
         public PictureMdl(int R_ID) {
             this.mR_ID = R_ID;
         }

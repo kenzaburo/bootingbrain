@@ -61,10 +61,6 @@
             android:label="@string/title_activity_main_calculating" >
         </activity>
         <activity
-            android:name=".matchingpictures.MatchingPicturesMainActivity"
-            android:label="@string/title_activity_matching_pictures_main" >
-        </activity>
-        <activity
             android:name=".nextnumber.NextNumberActivity"
             android:label="@string/title_activity_next_number_act" >
         </activity>
