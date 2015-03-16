@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1371a2_360316ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-16T05:09:47Z",
+      "side": 1,
+      "message": "The commit message shoul be aligned with the Trello task.\nYou should change it and push another patchset",
+      "range": {
+        "startLine": 7,
+        "startChar": 10,
+        "endLine": 7,
+        "endChar": 16
+      },
+      "revId": "c64d6247520a40bef1452219f3a44dcefa02e388",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1371a2_16009aa9",
+        "filename": "app/src/main/java/com/academic/idiots/bootingbrain/MatchingPictureActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-16T05:09:47Z",
+      "side": 1,
+      "message": "These members of class should define private or protected or public. We should not let them without identifier of permission scope which will lead to unexpected behaviors",
+      "range": {
+        "startLine": 32,
+        "startChar": 20,
+        "endLine": 32,
+        "endChar": 21
+      },
+      "revId": "c64d6247520a40bef1452219f3a44dcefa02e388",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1371a2_762c6e4b",
+        "filename": "app/src/main/java/com/academic/idiots/bootingbrain/MatchingPictureActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-16T05:09:47Z",
+      "side": 1,
+      "message": "Should get the user from local database?",
+      "range": {
+        "startLine": 52,
+        "startChar": 54,
+        "endLine": 52,
+        "endChar": 58
+      },
+      "revId": "c64d6247520a40bef1452219f3a44dcefa02e388",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1371a2_563172a1",
+        "filename": "app/src/main/res/layout/activity_matching_picture.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-16T05:09:47Z",
+      "side": 1,
+      "message": "space errors below new lines.\nFix them",
+      "range": {
+        "startLine": 20,
+        "startChar": 41,
+        "endLine": 20,
+        "endChar": 49
+      },
+      "revId": "c64d6247520a40bef1452219f3a44dcefa02e388",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
