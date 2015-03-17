@@ -8,6 +8,8 @@ local.properties
 .idea/*.xml
 .DS_Store
 **/build/
+*.iml
+
 .idea/dictionaries/
 bootingBrain/build/
 facebookSDK/build/
