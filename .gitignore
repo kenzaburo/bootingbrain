@@ -12,6 +12,7 @@ local.properties
 bootingBrain/build/
 facebookSDK/build/
 build/
+*.iml
 # Compiled source #
 ###################
 *.com

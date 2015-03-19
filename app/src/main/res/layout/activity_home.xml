@@ -8,14 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.academic.idiots.bootingbrain.HomeActivity"
     android:clickable="false">
-
-    <Button
-        android:id="@+id/btn_facebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"       
-        android:layout_centerHorizontal="true"
-        android:text="Facebook Login" />
-
     <Button
         android:id="@+id/btn_go"
         android:layout_width="wrap_content"
