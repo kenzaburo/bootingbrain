@@ -28,4 +28,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:19.+'
     compile files('libs/matheclipse-parser-0.0.10.jar')
     compile 'com.wefika:flowlayout:0.4.0'
+    compile 'uk.co.chrisjenx:calligraphy:2.0.2'
 }
