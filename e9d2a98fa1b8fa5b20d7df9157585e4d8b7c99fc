@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a1371a2_875e0be8",
+        "filename": "hoang_2.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1004139
+      },
+      "writtenOn": "2015-03-19T13:24:42Z",
+      "side": 1,
+      "message": "chinh lai Trung",
+      "revId": "e9d2a98fa1b8fa5b20d7df9157585e4d8b7c99fc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    }
+  ]
+}
