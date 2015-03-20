@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a106d94_e38f1274",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-20T10:22:49Z",
+      "side": 1,
+      "message": "Including Trello task in the commit\u0027s message",
+      "range": {
+        "startLine": 7,
+        "startChar": 20,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "47b58d75d72ce6894104bbbe863c10a033f3a92b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_03eeae22",
+        "filename": "app/src/main/java/com/academic/idiots/bootingbrain/HomeActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-20T10:22:49Z",
+      "side": 1,
+      "message": "Remove the comment if we don\u0027t need it anymore",
+      "range": {
+        "startLine": 121,
+        "startChar": 14,
+        "endLine": 121,
+        "endChar": 15
+      },
+      "revId": "47b58d75d72ce6894104bbbe863c10a033f3a92b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_83d9fe85",
+        "filename": "app/src/main/java/com/academic/idiots/bootingbrain/MatchingPictureActivity.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-20T10:22:49Z",
+      "side": 1,
+      "message": "User should be created by retrieving data from database/configuration file",
+      "range": {
+        "startLine": 52,
+        "startChar": 54,
+        "endLine": 52,
+        "endChar": 58
+      },
+      "revId": "47b58d75d72ce6894104bbbe863c10a033f3a92b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a1371a2_878f2b23",
         "filename": "app/src/main/java/com/academic/idiots/bootingbrain/matchingpictures/GameManager.java",
         "patchSetId": 1
@@ -13,6 +82,23 @@
       "writtenOn": "2015-03-20T05:15:46Z",
       "side": 1,
       "message": "comment",
+      "revId": "47b58d75d72ce6894104bbbe863c10a033f3a92b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a106d94_03d50e43",
+        "filename": "app/src/main/res/layout/activity_matching_picture.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1004027
+      },
+      "writtenOn": "2015-03-20T10:22:49Z",
+      "side": 1,
+      "message": "Space/tab error here. \nThere is not consistent between blocks",
       "revId": "47b58d75d72ce6894104bbbe863c10a033f3a92b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735",
       "unresolved": false
