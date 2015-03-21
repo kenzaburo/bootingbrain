@@ -18,6 +18,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
+import com.academic.idiots.bootingbrain.adapter.MainAdapter;
+import com.academic.idiots.bootingbrain.model.GridViewModel;
 import com.academic.idiots.bootingbrain.nextnumber.NextNumberActivity;
 import com.academic.idiots.nsd.NsdChatActivity;
 import com.simple.fb.SimpleFacebook;
@@ -44,13 +46,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
 
     private Button btnGame3;
-	Button btn_go, btn_game_2, btn_nsd;
-
+	private Button btn_go, btn_game_2, btn_nsd;
+    private GridView gridView;
     private Context mContext = this;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -113,7 +116,15 @@ public class HomeActivity extends Activity {
 		} catch (NoSuchAlgorithmException e) {
 		}
 
+        List<GridViewModel> list = new ArrayList<GridViewModel>();
+        list.add(new GridViewModel("Matching Picture", R.drawable.logo_matching_picture));
+        list.add(new GridViewModel("Master Number", R.drawable.logo_master_number));
+        list.add(new GridViewModel("Next Number", R.drawable.logo_next_number));
+        list.add(new GridViewModel("Master Colors", R.drawable.logo_master_color));
 
+        MainAdapter mainAdapter = new MainAdapter(this,0,list);
+        gridView = (GridView) findViewById(R.id.gr_main);
+        gridView.setAdapter(mainAdapter);
 	}
 
 
