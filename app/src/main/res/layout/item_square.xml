@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingPrefix"
+    android:padding="@dimen/marginBasex2"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <com.academic.idiots.widget.SquareLinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:background="#f0f0f0"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/img_logo" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Medium Text"
+            android:id="@+id/tv_game_name"
+            android:layout_gravity="center_vertical"
+            android:textSize="@dimen/textMedium"
+            android:gravity="center_horizontal"
+            fontPath="fonts/fontastique.ttf"
+            android:textColor="#fff"
+            />
+    </com.academic.idiots.widget.SquareLinearLayout>
+</LinearLayout>

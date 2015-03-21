@@ -19,5 +19,6 @@
     <string name="discover">Discover</string>
     <string name="register">Register</string>
     <string name="send">Send</string>
+    <string name="login_facebook">Login Facebook</string>
 
 </resources>
