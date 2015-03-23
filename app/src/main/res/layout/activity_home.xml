@@ -2,17 +2,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="false"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.academic.idiots.bootingbrain.HomeActivity"
-    android:clickable="false">
+    tools:context="com.academic.idiots.bootingbrain.HomeActivity">
 
     <Button
         android:id="@+id/btn_facebook"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"       
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="Facebook Login" />
 
@@ -25,13 +25,13 @@
         android:text="Go" />
 
     <LinearLayout
-        android:gravity="center_horizontal"
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical"
-        android:id="@+id/linearLayout">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_game_1"
@@ -60,11 +60,11 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/btn_nsd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nsd"
-        android:id="@+id/btn_nsd"
         android:layout_below="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Nsd" />
 
 </RelativeLayout>

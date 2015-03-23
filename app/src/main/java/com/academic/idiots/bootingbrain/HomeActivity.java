@@ -393,23 +393,4 @@ public class HomeActivity extends ActionBarActivity {
 
 		public abstract void fireResults(String data);
 	}
-
-//    private class LongOperation extends AsyncTask<String, Void, String> {
-//
-//        @Override
-//        protected String doInBackground(String... params) {
-//            return requestLoginWithFacebookAccount();
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String result) {
-//            Toast.makeText(mContext, result, Toast.LENGTH_SHORT).show();
-//        }
-//
-//        @Override
-//        protected void onPreExecute() {}
-//
-//        @Override
-//        protected void onProgressUpdate(Void... values) {}
-//    }
 }
